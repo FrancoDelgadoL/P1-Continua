@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PC1-Continua_Delgado-Franco")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50cd53e448f95e24a9e1d8c37e8079b4b081f45a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af13f2ab95dd43362194c7bb662153c3a278c221")]
 [assembly: System.Reflection.AssemblyProductAttribute("PC1-Continua_Delgado-Franco")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PC1-Continua_Delgado-Franco")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

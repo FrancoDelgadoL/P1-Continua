@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PC1-Continua_Delgado-Franco.props" />
+</Project>

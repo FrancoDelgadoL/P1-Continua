@@ -1,0 +1,35 @@
+﻿@model CasaDeCambio.Models.CambioMoneda
+
+@{
+    ViewData["Title"] = "Casa de cambio";
+}
+
+<h2>Casa de Cambio Online</h2>
+
+<form asp-action="Calcular" method="post">
+    <label for="monedaOrigen">Moneda a enviar:</label>
+    <select asp-for="MonedaOrigen" required>
+        <option value="USD">Dólar (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="MXN">Peso Mexicano (MXN)</option>
+        <option value="BRL">Real Brasileño (BRL)</option>
+    </select>
+
+    <label for="cantidadOrigen">Cantidad:</label>
+    <input asp-for="Cantidad" type="number" required />
+
+    <label for="monedaDestino">Moneda a recibir:</label>
+    <select asp-for="MonedaDestino" required>
+        <option value="USD">Dólar (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="MXN">Peso Mexicano (MXN)</option>
+        <option value="BRL">Real Brasileño (BRL)</option>
+    </select>
+
+    <button type="submit">Hacer Cambio</button>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <p style="color:red;">@Html.ValidationSummary()</p>
+    }
+</form>

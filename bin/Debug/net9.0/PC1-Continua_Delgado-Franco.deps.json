@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "PC1-Continua_Delgado-Franco/1.0.0": {
+        "runtime": {
+          "PC1-Continua_Delgado-Franco.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PC1-Continua_Delgado-Franco/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

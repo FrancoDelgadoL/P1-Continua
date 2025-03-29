@@ -36,12 +36,13 @@ namespace CasaDeCambio.Controllers
             return View(model);
         }
 
-        public IActionResult GenerarBoleta(string Nombre, string Documento, string Correo, string MonedaOrigen, string MonedaDestino, decimal Cantidad, decimal Resultado)
+        public IActionResult GenerarBoleta(string Nombre, string Documento, string Correo, string MonedaOrigen, string MonedaDestino, decimal Cantidad, decimal Resultado, DateTime FechaNamcimiento)
     {
         var boleta = new BoletaViewModel
     {
         Nombre = Nombre,
         Documento = Documento,
+        FechaNacimiento = FechaNamcimiento,
         Correo = Correo,
         MonedaOrigen = MonedaOrigen,
         MonedaDestino = MonedaDestino,

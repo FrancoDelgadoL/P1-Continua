@@ -11,5 +11,7 @@ namespace CasaDeCambio.Models
         public decimal Cantidad { get; set; }
         public decimal Resultado { get; set; }
         public DateTime Fecha { get; set; }
+        public DateTime FechaNacimiento { get; set; }
+         
     }
 }

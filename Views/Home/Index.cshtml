@@ -6,17 +6,18 @@
 
 <h2>Casa de Cambio Online</h2>
 
-<form asp-action="Calcular" method="post">
+<form asp-controller="Cambio" asp-action="Index" method="post">
     <label for="monedaOrigen">Moneda a enviar:</label>
     <select asp-for="MonedaOrigen" required>
         <option value="USD">Dólar (USD)</option>
         <option value="EUR">Euro (EUR)</option>
         <option value="MXN">Peso Mexicano (MXN)</option>
         <option value="BRL">Real Brasileño (BRL)</option>
+        <option value="PEN">Sol Peruano (PEN)</option>
     </select>
 
     <label for="cantidadOrigen">Cantidad:</label>
-    <input asp-for="Cantidad" type="number" required />
+    <input asp-for="Cantidad" type="number" step="0.01" required />
 
     <label for="monedaDestino">Moneda a recibir:</label>
     <select asp-for="MonedaDestino" required>
@@ -24,12 +25,35 @@
         <option value="EUR">Euro (EUR)</option>
         <option value="MXN">Peso Mexicano (MXN)</option>
         <option value="BRL">Real Brasileño (BRL)</option>
+        <option value="PEN">Sol Peruano (PEN)</option>
     </select>
 
     <button type="submit">Hacer Cambio</button>
-
-    @if (!ViewData.ModelState.IsValid)
-    {
-        <p style="color:red;">@Html.ValidationSummary()</p>
-    }
 </form>
+
+@if (Model != null && Model.Resultado > 0)
+{
+    <h3>Resultado del Cambio:</h3>
+    <p>Has cambiado @Model.Cantidad @Model.MonedaOrigen a <strong>@Model.Resultado @Model.MonedaDestino</strong></p>
+}
+
+<h4>Ingrese sus datos para generar la boleta:</h4>
+    <form method="post" asp-action="GenerarBoleta">
+        <input type="hidden" name="MonedaOrigen" value="@Model?.MonedaOrigen" />
+        <input type="hidden" name="MonedaDestino" value="@Model?.MonedaDestino" />
+        <input type="hidden" name="Cantidad" value="@Model?.Cantidad" />
+        <input type="hidden" name="Resultado" value="@Model?.Resultado" />
+
+        <label>Nombre Completo:</label>
+        <input type="text" name="Nombre" class="form-control" required />
+
+        <label>DNI o Pasaporte:</label>
+        <input type="text" name="Documento" class="form-control" required />
+
+        <label>Correo Electrónico:</label>
+        <input type="email" name="Correo" class="form-control" required />
+
+        <button type="submit" class="btn btn-success">Generar Boleta</button>
+    </form>
+
+

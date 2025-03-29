@@ -1,0 +1,16 @@
+@model CasaDeCambio.Models.BoletaViewModel
+
+<h2>Boleta de Cambio de Moneda</h2>
+
+<p><strong>Nombre:</strong> @Model.Nombre</p>
+<p><strong>Documento:</strong> @Model.Documento</p>
+<p><strong>Correo:</strong> @Model.Correo</p>
+<p><strong>Fecha:</strong> @Model.Fecha</p>
+
+<h3>Detalles del Cambio:</h3>
+<p><strong>Moneda de Origen:</strong> @Model.MonedaOrigen</p>
+<p><strong>Moneda de Destino:</strong> @Model.MonedaDestino</p>
+<p><strong>Cantidad Enviada:</strong> @Model.Cantidad</p>
+<p><strong>Recibirás:</strong> @Model.Resultado</p>
+
+<button onclick="window.print();" class="btn btn-primary">Imprimir Boleta</button>
